@@ -141,7 +141,7 @@ function App() {
     const numbers = smsDraft.to.split(",").map((n) => n.trim());
     try {
       for (const number of numbers) {
-        await fetch("http://localhost:5000/send-sms", {
+        await fetch("https://incident-management-backend.onrender.com/send-sms", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ to: number, message: smsDraft.body }),
